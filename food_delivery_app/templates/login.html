@@ -1,0 +1,146 @@
+<!-- login.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+        <!-- Basic -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Site Metas -->
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+      
+        <title>Goid</title>
+        <!-- slider stylesheet -->
+        <link rel="stylesheet" type="text/css"
+          href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'%}" />
+      
+        <!-- bootstrap core css -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
+      
+        <!-- fonts style -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+          rel="stylesheet" />
+      
+        <!-- Custom styles for this template -->
+        <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+        <!-- responsive style -->
+        <link href="{% static 'css/responsive.css'%}" rel="stylesheet" />
+    
+</head>
+<body>
+   <!-- header section strats -->
+   <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="{% static 'images/logo.png' %}" alt="" />
+          <span>
+            TOMATO 
+          </span>
+        </a>
+
+        <div class="navbar-collapse" id="">
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div id="myNav" class="overlay">
+            <div class="overlay-content">
+              <a href="index.html">HOME</a>
+              <a href="{% url 'about' %}">ABOUT</a>
+              <a href=" {% url 'contact' %} ">Contact</a>
+              <a href=" {% url 'order_now' %} ">Order</a>
+              <a href=" {% url 'login' %} ">login</a>
+              <a href=" {% url 'signup' %} ">Signin</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+    <h1>Login</h1>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+    <form method="POST" action="{% url 'user_login' %}">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+     <!-- about section -->
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About <br>
+                Our <br>
+                Food
+              </h2>
+              <hr>
+            </div>
+            <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+              in
+              some form, by injected humour, or randomised words
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+        <div class="social_container">
+          <h4>
+            Follow on
+          </h4>
+          <div class="social-box">
+            <a href="">
+              <img src="{% static 'images/fb.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/twitter.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/linkedin.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/youtube.png' %}" alt="">
+            </a>
+          </div>
+        </div>
+       
+      </section>
+      <!-- footer section -->
+      
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Item List</title>
+</head>
+<body>
+    <h1>Menu Item List</h1>
+    <ul>
+        {% for menu_item in menu_items %}
+            <li>{{ menu_item.name }} - Price: {{ menu_item.price }}</li>
+        {% empty %}
+            <li>No menu items available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

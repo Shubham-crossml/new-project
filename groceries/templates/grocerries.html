@@ -1,0 +1,47 @@
+<!-- grocerries.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Grocery Bookings</title>
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'%}" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet" />
+</head>
+<body>
+    <h1>Grocery Bookings</h1>
+    <ul>
+        {% for booking in bookings %}
+        <li>
+            <strong>Name:</strong> {{ booking.name }}<br>
+            <strong>Address:</strong> {{ booking.address }}<br>
+            <strong>Phone Number:</strong> {{ booking.phone_number }}<br>
+            <strong>Item Name:</strong> {{ booking.item_name }}<br>
+            <strong>Quantity:</strong> {{ booking.quantity }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

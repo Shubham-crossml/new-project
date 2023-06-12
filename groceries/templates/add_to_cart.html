@@ -1,0 +1,91 @@
+<!-- create_grocery_booking.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Create Grocery Booking</title>
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+      href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'%}" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet" />
+</head>
+<body>
+    <h1>Create Grocery Booking</h1>
+    <form method="POST" action="{% url 'create_grocery_booking' %}">
+        {% csrf_token %}
+
+        <!-- Name Field -->
+        <div>
+            <label for="id_name">Name:</label>
+            <input type="text" id="id_name" name="name" required>
+        </div>
+
+        <!-- Address Field -->
+        <div>
+            <label for="id_address">Address:</label>
+            <textarea id="id_address" name="address" rows="3" required></textarea>
+        </div>
+
+        <!-- Phone Number Field -->
+        <div>
+            <label for="id_phone_number">Phone Number:</label>
+            <input type="text" id="id_phone_number" name="phone_number" required>
+        </div>
+
+        <!-- Item Name Field -->
+        <div>
+            <label for="id_item_name">Item Name:</label>
+            <input type="text" id="id_item_name" name="item_name" required>
+        </div>
+
+        <!-- Quantity Field -->
+        <div>
+            <label for="id_quantity">Quantity:</label>
+            <input type="number" id="id_quantity" name="quantity" min="1" required>
+        </div>
+
+        <!-- Additional fields can be added here -->
+        
+        <!-- Date Field -->
+        <div>
+            <label for="id_date">Date:</label>
+            <input type="date" id="id_date" name="date" required>
+        </div>
+
+        <!-- Time Field -->
+        <div>
+            <label for="id_time">Time:</label>
+            <input type="time" id="id_time" name="time" required>
+        </div>
+
+        <!-- Special Requests Field -->
+        <div>
+            <label for="id_special_requests">Special Requests:</label>
+            <textarea id="id_special_requests" name="special_requests" rows="3"></textarea>
+        </div>
+
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

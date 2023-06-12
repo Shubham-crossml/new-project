@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Restaurant</title>
+</head>
+<body>
+    <h1>Create Restaurant</h1>
+    <form method="POST" action="{% url 'create_restaurant' %}">
+        {% csrf_token %}
+        
+        <!-- Display form fields -->
+        {{ form.as_p }}
+        
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

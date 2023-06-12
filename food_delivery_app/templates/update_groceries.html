@@ -1,0 +1,15 @@
+<!-- update_grocery.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Grocery</title>
+</head>
+<body>
+    <h1>Update Grocery</h1>
+    <form method="POST" action="{% url 'add_to_cart' grocery_id=grocery.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add to Cart</button>
+    </form>
+</body>
+</html>
